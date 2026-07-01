@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Virtual Controller</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Live Camera Feed as Background -->
+    <video id="webcam" autoplay playsinline class="camera-feed"></video>
+
+    <!-- Canvas overlay for all effects -->
+    <canvas id="output_canvas" class="output_canvas"></canvas>
+
+    <!-- HUD Top Bar -->
+    <div class="hud-top">
+      <div class="hud-logo">
+        <span class="logo-icon">◆</span>
+        <span class="logo-text">AI CONTROLLER</span>
+      </div>
+      <div class="hud-status" id="hud-status">
+        <span class="status-dot"></span>
+        <span id="hud-status-text">OFFLINE</span>
+      </div>
+    </div>
+
+    <!-- HUD Bottom Info -->
+    <div class="hud-bottom">
+      <div class="hud-info" id="hud-hands">HANDS: 0</div>
+      <div class="hud-info" id="hud-gesture">GESTURE: —</div>
+      <div class="hud-info" id="hud-fps">FPS: 0</div>
+    </div>
+
+    <!-- Startup Overlay -->
+    <div class="startup-overlay" id="startup-overlay">
+      <div class="glass-panel">
+        <div class="panel-glow"></div>
+        <div class="panel-icon">✋</div>
+        <h1>AI Controller</h1>
+        <p>Track your hands in real-time with AI.<br>Close your fist, then open it to unleash energy.</p>
+        <button id="start-camera-btn" class="glow-btn">
+          <span class="btn-text">Initialize Camera</span>
+          <span class="btn-shimmer"></span>
+        </button>
+        <div id="status-text" class="status-text">Loading AI model...</div>
+      </div>
+    </div>
+  </div>
+  <footer>Developed By Tatiana Nassar</footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
